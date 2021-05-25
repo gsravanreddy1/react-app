@@ -5,13 +5,12 @@
       "text": "Shopping Food",
       "day": "May 20 2021 @07:00 PM",
       "reminder": true
-  },
-  {
-      "id": 2,
-      "text": "Shopping Electronics",
-      "day": "May 21 2021 @09:30 AM",
-      "reminder": false
-  }
+    },
+    {
+      "text": "Test",
+      "day": "26 May 2021 @9:30 PM",
+      "reminder": true,
+      "id": 2
+    }
   ]
-  
 }

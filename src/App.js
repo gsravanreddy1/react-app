@@ -77,18 +77,19 @@ const toggleReminder = async (id) => {
   const toggleTask = await fetchTask(id)
 
   const updatedTask = {...toggleTask, reminder: !toggleTask.reminder}
+ 
 
-  const res = await fetch("http://localhost:5000/tasks/"+id, {
-    method: 'PUT',
-    header: {
-      'Content-type':'application/json'
-    },
-    body: JSON.stringify(updatedTask)
-  })
+  const res = await fetch('http://localhost:5000/tasks/'+id, {
+      method: 'PUT',
+      headers: {
+        'Content-type': 'application/json',
+      },
+      body: JSON.stringify(updatedTask),
+    })
 
   const data = await res.json() 
 
-  setTasks(tasks.map((task)=>task.id === id?{ ...task, reminder: !data.reminder}: task))
+  setTasks(tasks.map((task)=>task.id === id?{ ...task, reminder: data.reminder}: task))
 
 }
 
@@ -101,17 +102,19 @@ const addPage = () =>{
 // Add New Task
 
 const addTask = async (task) => {
-  //console.log(task.reminder)
+ 
 
-  const res = await fetch("http://localhost:5000", {
-    method: 'POST',
-    header: {
-      'Content-type':'application/json'
-    },
-    body: JSON.stringify(task)
-  })
+  const res = await fetch('http://localhost:5000/tasks', {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+      },
+      body: JSON.stringify(task),
+    })
 
-  const data = await res.json()
+    const data = await res.json()
+
+  console.log(data.text)
 
   setTasks([...tasks, data])
 
