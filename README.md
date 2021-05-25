@@ -4,11 +4,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ### Git Commands
 
-git remote add origin https://github.com/gsravanreddy1/react-app
-git status
-git add .
-git commit -m "commit changes"
-git push -u origin master
+git remote add origin https://github.com/gsravanreddy1/react-app \
+git status \
+git add . \
+git commit -m "commit changes" \
+git push -u origin master \
 
 ## Available Scripts
 
